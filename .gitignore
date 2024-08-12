@@ -1,13 +1,17 @@
-kava_project.db
-.idea
-config
-files
-
 # Ignore the virtual environment directory
 myenv/
 
-# Distribution / packaging
-.Python
+# Ignore SQLite database file
+kava_project.db
+
+# Ignore PyCharm IDE project files
+.idea/
+
+# Ignore configuration and other specific files or directories
+config/
+files/
+
+# Ignore the distribution / packaging directories
 build/
 develop-eggs/
 dist/
@@ -25,3 +29,57 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Rope project settings
+.ropeproject
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# VS Code
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
