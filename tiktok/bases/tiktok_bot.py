@@ -2,7 +2,7 @@ from playwright.async_api import Page
 
 from database.models import TikTokRequest
 from tiktok.bases.action import Action
-from tiktok.bases.locators import USERS_TAB_ITEM_SELECTOR, PROFILE_CONTAINER, PROFILE_LINK, NEXT_VIDEO
+from tiktok.bases.locators import USERS_TAB_ITEM_SELECTOR, PROFILE_CONTAINER, PROFILE_LINK, NEXT_VIDEO, NO_CONTENT
 
 
 class TikTokBot:
@@ -39,6 +39,11 @@ class TikTokBot:
             print(f"An error occurred: {e}")
 
     async def comment_scenario_1(self, request: TikTokRequest):
+        # Check if the "No content" element is present
+        no_content_element = await self.page.wait_for_selector(NO_CONTENT)
+        if no_content_element is not None:
+            return
+
         await self.action.find_and_click_first_video()
         await self.action.enter_comment(request.comments)
 

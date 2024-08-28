@@ -8,7 +8,6 @@ kava_project.db
 .idea/
 
 # Ignore configuration and other specific files or directories
-config/
 files/
 
 # Ignore the distribution / packaging directories

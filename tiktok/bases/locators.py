@@ -12,6 +12,7 @@ PROFILE_CONTAINER = 'div[data-e2e="search-user-container"]'
 PROFILE_LINK = 'a[href]'
 
 # Comment scenario 1
+NO_CONTENT = ".css-1ovqurc-PTitle.emuynwa1"
 VIDEO_LINK = "//div[@data-e2e='user-post-item']//a[contains(@href, '/video')]"
 NEXT_VIDEO = "//button[@data-e2e='arrow-right']"
 
@@ -21,7 +22,6 @@ COMMENT_INPUT = "//div[@class='css-19hqadz-DivBottomCommentContainer e1mecfx04']
 COMMENT_SEND_BUTTON = 'div[data-e2e="comment-post"]'
 
 # Message scenario 1
-
 # Follow Button Locators
 FOLLOW_BUTTON = 'button[data-e2e="follow-button"]'
 

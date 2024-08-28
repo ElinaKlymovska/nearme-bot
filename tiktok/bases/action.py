@@ -147,9 +147,6 @@ class Action:
         try:
             await self.detect_and_handle_captcha()
 
-            # primary_message_button_selector = '//button[@type="button" and contains(@class, "css-1btqthh-Button-StyledMessageButton") and text()="Messages"]'
-            # secondary_message_button_selector = "//button[@class='TUXButton TUXButton--default TUXButton--medium TUXButton--secondary' and @aria-disabled='false' and @type='button' and @data-e2e='message-button']//div[@class='TUXButton-label' and text()='Message']"
-
             # Follow button logic
             follow_button = await self.page.query_selector(FOLLOW_BUTTON)
             if follow_button:
@@ -206,7 +203,7 @@ class Action:
             input_element = await self.page.query_selector(input_selector)
             if input_element:
                 await input_element.focus()
-                await input_element.evaluate('this.innerHTML = ""')
+                await input_element.evaluate('element => element.value = ""')  # Clear the input field
                 await self.page.keyboard.type(str(text))
                 print(f"{button_text} '{text}' entered successfully")
 
@@ -227,7 +224,4 @@ class Action:
 
     async def enter_comment(self, comments: list):
         comment_text = random.choice(comments)
-        # comment_input_selector = "//div[@class='css-19hqadz-DivBottomCommentContainer e1mecfx04']//div[" \
-        #                          "@contenteditable='true']"
-        # post_button_selector = 'div[data-e2e="comment-post"]'
         await self.enter_text_and_click_button(COMMENT_INPUT, COMMENT_SEND_BUTTON, comment_text, "Comment")
